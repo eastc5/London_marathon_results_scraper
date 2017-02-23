@@ -6,5 +6,8 @@ and output it to a csv file.
 The repo contains the following files:
 
 * .R file which contains the script file
-* csv data file which contains the output of the script 
+* csv data file which contains the output of the script
+* .Rmd knitr file to create a histogram of finishing times in plotly
+
+You a complied version of the .Rmd file with the plotly histogram of finishing times created from this data here: http://rpubs.com/eastc5/252997
 

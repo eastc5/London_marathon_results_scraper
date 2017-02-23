@@ -1,0 +1,29 @@
+---
+title: "Histogram of London Marathon Times"
+author: "Campbell Easton"
+date: "23 February 2017"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+##
+
+The following page contains a plot of London Marthon Finishing times for men and women created using the `plotly` package.
+The data to create the plot was downloaded from Virgin London marthon website you can see the data and code used to scrape it here: https://github.com/eastc5/London_marathon_results_scraper
+This plot was created for Assignment 2 of the Coursera Course Developing Data Products by John Hopkins University.
+
+##
+```{r, message=FALSE, warning=FALSE}
+library(plotly)
+#load data
+Rdata<-read.csv("./data/VLM2016.csv")
+
+f <- list( family = "Courier New, monospace", size = 18, color = "#7f7f7f")
+x <- list( title = "Finishing Time (Hours)", titlefont = f)
+
+plot_ly(x = ~as.difftime(as.character(Rdata$FINISH)), type = "histogram", color = ~Rdata$Gender)%>% layout(xaxis = x,title = "Histogram of London Marathon Finishing Times for Men and Women" )
+
+```
